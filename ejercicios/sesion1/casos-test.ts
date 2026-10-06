@@ -44,3 +44,11 @@ function listarPendientes(casos: CasoDeTest[]): CasoDeTest[] {
   return pendientes;
 }
 console.log(listarPendientes(casosDeTest));
+//5 y 6.Escribir una arrow function formatearCaso(caso) que reciba un objeto caso y devuelva un string legible, por ejemplo: "#1 - Login válido (alta) - Pendiente".
+const formatearCaso = (caso: CasoDeTest): string => {
+  const estado = caso.ejecutado ? "Ejecutado" : "Pendiente";
+  return `#${caso.id} - ${caso.titulo} (${caso.prioridad}) - ${estado}`;
+};
+casosDeTest.forEach((caso) => {
+  console.log(formatearCaso(caso));
+});
